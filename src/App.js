@@ -1,5 +1,5 @@
-function App() {
-	return <div>Hello React</div>;
-}
+import Layout from './components/Layout';
 
-export default App;
+export default function App() {
+	return <Layout>Cynohub</Layout>;
+}

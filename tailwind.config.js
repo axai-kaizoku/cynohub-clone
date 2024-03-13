@@ -6,6 +6,12 @@ module.exports = {
 			...theme('colors'),
 			footer: '#171621',
 		}),
+
+		extend: {
+			colors: {
+				'cyno-yellow': '#F7B53F',
+			},
+		},
 	},
 	plugins: [],
 };

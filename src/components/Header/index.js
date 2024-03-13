@@ -4,7 +4,7 @@ import { Fragment } from 'react';
 export default function Header() {
 	return (
 		<header>
-			<nav className="h-16 w-full flex justify-between items-center px-8 lg:px-20 xl:px-32 ">
+			<nav className="h-16 w-full flex justify-between shadow-lg items-center px-8 lg:px-20 xl:px-32 ">
 				<img
 					src="/cynohub-students/logo.png"
 					alt="logo"

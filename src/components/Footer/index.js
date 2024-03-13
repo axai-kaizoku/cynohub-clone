@@ -9,7 +9,7 @@ import { FaMailBulk } from 'react-icons/fa';
 export default function Footer() {
 	return (
 		<footer className="bg-footer min-h-[90vh] mt-10 w-full text-white flex flex-col justify-around items-center">
-			<div className="flex flex-col w-4/5 my-32 mx-16">
+			<div className="flex flex-col w-4/5 mt-28 mb-20 mx-16">
 				<div className="flex flex-col sm:flex-row justify-between">
 					<div className="flex flex-col max-sm:pb-14 gap-4">
 						<h3 className="font-bold text-xl">Address</h3>

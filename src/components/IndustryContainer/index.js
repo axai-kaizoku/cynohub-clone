@@ -19,41 +19,47 @@ export default function IndustryContainer() {
 	};
 	return (
 		<>
-			<h2 className="text-3xl font-semibold leading-relaxed text-right text-gray-800 sm:text-4xl ">
-				Be Industry-Ready From Day-One
-			</h2>
 			<div className="flex justify-between max-sm:flex-col">
-				<div className="flex items-center justify-center w-full h-4/5 sm:m-3 sm:w-2/4 ">
+				<h2 className="text-3xl font-semibold leading-relaxed text-left text-gray-800 sm:hidden sm:text-4xl ">
+					Be Industry-Ready From Day-One
+				</h2>
+				<div className="flex items-center justify-center w-full h-2/4 sm:m-3 sm:w-2/4 ">
 					<img
 						src={image}
 						alt="google-img"
 					/>
 				</div>
-				<ul className="flex flex-col w-full gap-2 mt-6 text-lg font-semibold sm:mt-36 sm:w-2/6">
-					<li
-						className="pb-2 border-b-2 border-b-teal-300 "
-						onClick={() => handleClick('communication')}>
-						Learn Professional Communication
-					</li>
-					<li
-						className="pb-2 border-b-2 border-b-teal-300 "
-						onClick={() => handleClick('job')}>
-						Job Training
-					</li>
-					<li
-						className="pb-2 border-b-2 border-b-teal-300 "
-						onClick={() => handleClick('interview')}>
-						Interview Preparation
-					</li>
-					<li
-						className="pb-2 border-b-2 border-b-teal-300 "
-						onClick={() => handleClick('mock')}>
-						Mock Interviews
-					</li>
-					<li className="pt-3">
-						<BookBtn />
-					</li>
-				</ul>
+				<div className="flex flex-col w-full gap-2 mt-6 text-lg font-semibold sm:w-2/6">
+					<h2 className="text-3xl font-semibold leading-relaxed text-left text-gray-800 sm:text-4xl max-sm:hidden">
+						Be Industry-Ready From Day-One
+					</h2>
+
+					<ul className="flex flex-col w-full gap-8 mt-4 text-lg font-semibold sm:mt-20">
+						<li
+							className="pb-2 border-b-2 border-b-teal-300 "
+							onClick={() => handleClick('communication')}>
+							Learn Professional Communication
+						</li>
+						<li
+							className="pb-2 border-b-2 border-b-teal-300 "
+							onClick={() => handleClick('job')}>
+							Job Training
+						</li>
+						<li
+							className="pb-2 border-b-2 border-b-teal-300 "
+							onClick={() => handleClick('interview')}>
+							Interview Preparation
+						</li>
+						<li
+							className="pb-2 border-b-2 border-b-teal-300 "
+							onClick={() => handleClick('mock')}>
+							Mock Interviews
+						</li>
+						<li className="pt-3">
+							<BookBtn />
+						</li>
+					</ul>
+				</div>
 			</div>
 		</>
 	);

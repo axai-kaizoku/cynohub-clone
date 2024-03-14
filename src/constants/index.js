@@ -34,3 +34,10 @@ export const learnerCompanies = [
 	'/cynohub-students/think.png',
 	'/cynohub-students/unschool.png',
 ];
+
+export const startUps = [
+	'/cynohub-comp/1.png',
+	'/cynohub-comp/2.png',
+	'/cynohub-comp/3.png',
+	'/cynohub-comp/4.png',
+];

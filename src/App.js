@@ -1,11 +1,13 @@
 import Banner from './components/Banner';
 import BookBtn from './components/BookBtn';
+import CareerContainer from './components/CareerContainer';
 import Form from './components/Form';
 import GifContainer from './components/GifContainer';
 import GoogleSection from './components/GoogleSection';
 import IndustryContainer from './components/IndustryContainer';
 import Layout from './components/Layout';
 import LearnersBanner from './components/LearnersBanner';
+import MediaContainer from './components/MediaContainer';
 import Carousel from './components/Slider';
 
 export default function App() {
@@ -61,6 +63,12 @@ export default function App() {
 				</div>
 				<div className="w-full p-4 pt-16 bg-white">
 					<IndustryContainer />
+				</div>
+				<div className="w-full p-4 pt-16 mb-10 bg-white">
+					<MediaContainer />
+				</div>
+				<div className="w-full pt-12 bg-sky-200">
+					<CareerContainer />
 				</div>
 			</div>
 		</Layout>

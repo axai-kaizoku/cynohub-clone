@@ -4,13 +4,23 @@ import { VscError } from 'react-icons/vsc';
 
 export default function Form() {
 	const [error, setError] = useState('');
-	const [num, setNum] = useState();
+	const [num, setNum] = useState('');
+	const [otp, setOtp] = useState('');
 	const [verifyNum, setVerifyNum] = useState(false);
 	const [sendOtp, setSendOtp] = useState(false);
-	const [otp, setOtp] = useState();
+	const [otpVerified, setOtpVerified] = useState(false);
+	const [bookingConfirmed, setBookingConfirmed] = useState(false);
+
 	const handleSubmit = (e) => {
 		e.preventDefault();
 		setError('');
+		if (!verifyNum) {
+			setError('Please verify OTP first.');
+			return;
+		}
+		// Other form validation logic
+		// ...
+
 		const name = e.target[0].value.trim();
 		const email = e.target[1].value.trim();
 		const number = e.target[2].value.trim();
@@ -31,28 +41,47 @@ export default function Form() {
 			return;
 		}
 
-		if (typeof otp === undefined) {
-			setError('Invalid OTP');
+		if (!otpVerified) {
+			setError('Invalid OTP.');
 			return;
 		}
 
-		setError('No errors');
+		setError('');
+
+		console.log(name, email, number, occupation);
+
+		setBookingConfirmed(true);
+		setTimeout(() => {
+			setBookingConfirmed(false);
+		}, 3000);
 	};
 
 	const verifyNumber = () => {
+		setSendOtp(true);
 		setTimeout(() => {
 			setVerifyNum(true);
-		}, 600);
-		setSendOtp(true);
+			setSendOtp(true);
+		}, 1000);
+	};
+
+	const handleOtpChange = (e) => {
+		const enteredOtp = e.target.value;
+		setOtp(enteredOtp);
+		if (enteredOtp.length > 3 && enteredOtp === '1234') {
+			// Simulate OTP verification
+			setOtpVerified(true);
+		} else {
+			setOtpVerified(false);
+		}
 	};
 
 	return (
 		<>
-			<section className="bg-gray-50 ">
-				<div className="flex flex-col  items-center justify-center px-0 py-0 mx-auto md:h-screen lg:py-0">
-					<div className="w-full bg-white rounded-lg shadow md:mt-0 sm:max-w-full xl:p-0 ">
+			<section className="bg-gray-50">
+				<div className="flex flex-col items-center justify-center px-0 py-0 mx-auto md:h-screen lg:py-0">
+					<div className="w-full bg-white rounded-lg shadow md:mt-0 sm:max-w-full xl:p-0">
 						<div className="p-6 shadow-lg space-y-4 md:space-y-6 sm:p-8">
-							<h1 className="text-xl font-bold  text-gray-900 md:text-2xl ">
+							<h1 className="text-xl font-bold text-gray-900 md:text-2xl">
 								Book a{' '}
 								<span className="text-cyno-yellow">Free Guidance Session</span>{' '}
 								With Our Experts
@@ -60,6 +89,7 @@ export default function Form() {
 							<form
 								className="space-y-4 md:space-y-6"
 								onSubmit={handleSubmit}>
+								{/* Form fields */}
 								<div>
 									<label
 										htmlFor="name"
@@ -135,35 +165,40 @@ export default function Form() {
 										</div>
 									</div>
 								</div>
+
 								<div className={`flex gap-8 ${sendOtp ? '' : 'hidden'}`}>
+									{/* OTP input field */}
 									<input
 										type="number"
-										name="number"
-										id="number"
+										name="otp"
+										id="otp"
 										placeholder="Enter OTP"
 										value={otp}
-										onChange={(e) => setOtp(e.target.value)}
+										onChange={handleOtpChange}
 										className="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg block w-2/3 p-2.5"
 										required
 									/>
+									{/* OTP verification status */}
 									<div className="w-2/6">
-										{otp && otp.length < 4 && otp == 1234 ? (
-											<div className={`w-full flex gap-4`}>
-												<img
-													src="/cynohub-comp/verified.png"
-													alt="verified"
-													width={30}
-													height={30}
-													className="object-contain"
-												/>
-												<p className="text-lg">OTP Verified</p>
-											</div>
-										) : (
-											<div className={`w-full flex gap-4`}>
-												<VscError className="font-bold text-red-600 text-3xl" />
-												<p className="text-lg">Wrong OTP</p>
-											</div>
-										)}
+										{otp && otp.length > 3 ? (
+											otpVerified ? (
+												<div className="flex gap-4">
+													<img
+														src="/cynohub-comp/verified.png"
+														alt="verified"
+														width={30}
+														height={30}
+														className="object-contain"
+													/>
+													<p className="text-lg">OTP Verified</p>
+												</div>
+											) : (
+												<div className="flex gap-4">
+													<VscError className="text-3xl text-red-500 font-bold" />
+													<p className="text-lg">Invalid OTP</p>
+												</div>
+											)
+										) : null}
 									</div>
 								</div>
 								<div>
@@ -182,15 +217,25 @@ export default function Form() {
 										<option value="employed">Working Professional</option>
 									</select>
 								</div>
+								{/* Error message */}
 								<div>
 									<span className="text-red-500">{error}</span>
 								</div>
+								{/* Submit button */}
 								<button
 									type="submit"
-									className="w-full border text-white font-bold bg-blue-700 hover:bg-blue-600 focus:ring-4 focus:outline-none shadow-2xl rounded-lg text-sm px-5 py-2.5 text-center">
+									className=" w-full border text-white font-bold bg-blue-700 hover:bg-blue-600 focus:ring-4 focus:outline-none shadow-2xl rounded-lg text-sm px-5 py-2.5 text-center">
 									Book a Free Session
 								</button>
 							</form>
+							{/* Confirmation message */}
+							{bookingConfirmed && (
+								<>
+									<div className=" bg-green-100 text-green-700 rounded-lg p-4 text-center text-xl font-bold">
+										Booked a Session !
+									</div>
+								</>
+							)}
 						</div>
 					</div>
 				</div>

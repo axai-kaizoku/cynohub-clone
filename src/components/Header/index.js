@@ -5,11 +5,13 @@ export default function Header() {
 	return (
 		<header>
 			<nav className="h-16 w-full flex justify-between shadow-lg items-center px-8 lg:px-20 xl:px-32 ">
-				<img
-					src="/cynohub-students/logo.png"
-					alt="logo"
-					className="object-contain w-[118px] h-[36px] "
-				/>
+				<a href="/">
+					<img
+						src="/cynohub-students/logo.png"
+						alt="logo"
+						className="object-contain w-[118px] h-[36px] "
+					/>
+				</a>
 				<ul className="max-sm:hidden max-md:hidden flex text-[18px] gap-8 lg:gap-14 font-bold">
 					<li className="hover:underline transition duration-1000 ease-in-out cursor-pointer">
 						Home

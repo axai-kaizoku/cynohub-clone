@@ -14,10 +14,7 @@ export default function Form() {
 	const handleSubmit = (e) => {
 		e.preventDefault();
 		setError('');
-		if (!verifyNum) {
-			setError('Please verify OTP first.');
-			return;
-		}
+
 		// Other form validation logic
 		// ...
 
@@ -38,6 +35,11 @@ export default function Form() {
 
 		if (!validateNumber(number)) {
 			setError('Invalid Mobile number.');
+			return;
+		}
+
+		if (!verifyNum) {
+			setError('Please verify OTP first.');
 			return;
 		}
 
@@ -77,10 +79,12 @@ export default function Form() {
 
 	return (
 		<>
-			<section className="bg-gray-50">
+			<section
+				className="bg-gray-50"
+				id="book-session">
 				<div className="flex flex-col items-center justify-center px-0 py-0 mx-auto md:h-screen lg:py-0">
 					<div className="w-full bg-white rounded-lg shadow md:mt-0 sm:max-w-full xl:p-0">
-						<div className="p-6 shadow-lg space-y-4 md:space-y-6 sm:p-8">
+						<div className="p-6 space-y-4 shadow-lg md:space-y-6 sm:p-8">
 							<h1 className="text-xl font-bold text-gray-900 md:text-2xl">
 								Book a{' '}
 								<span className="text-cyno-yellow">Free Guidance Session</span>{' '}
@@ -94,37 +98,43 @@ export default function Form() {
 									<label
 										htmlFor="name"
 										className="block mb-2 text-sm font-medium text-gray-900 ">
-										Full Name
+										Full Name <span className="text-red-500">*</span>
 									</label>
 									<input
 										type="name"
 										name="name"
 										id="name"
-										className="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg   block w-full p-2.5"
+										className={`bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg   block w-full p-2.5 ${
+											error === 'Name must be at least 3 characters long.'
+												? 'border border-red-600'
+												: ''
+										}`}
 										placeholder="Your Full Name"
-										required
 									/>
 								</div>
 								<div>
 									<label
 										htmlFor="signinEmail"
 										className="block mb-2 text-sm font-medium text-gray-900 ">
-										Email
+										Email <span className="text-red-500">*</span>
 									</label>
 									<input
 										type="email"
 										name="email"
 										id="signinEmail"
-										className="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg   block w-full p-2.5"
+										className={`bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg   block w-full p-2.5 ${
+											error === 'Invalid Email address.'
+												? 'border border-red-600'
+												: ''
+										}`}
 										placeholder="Your Email Address"
-										required
 									/>
 								</div>
 								<div>
 									<label
 										htmlFor="number"
 										className="block mb-2 text-sm font-medium text-gray-900 ">
-										Number
+										Number <span className="text-red-500">*</span>
 									</label>
 									<div className="flex gap-8">
 										<input
@@ -134,8 +144,9 @@ export default function Form() {
 											value={num}
 											onChange={(e) => setNum(e.target.value)}
 											placeholder="Your Whatsapp Number"
-											className="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg block w-2/3 p-2.5"
-											required
+											className={`bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg block w-2/3 p-2.5
+											${error === 'Invalid Mobile number.' ? 'border border-red-600' : ''}
+											`}
 										/>
 										<div className="w-2/6">
 											{verifyNum ? (
@@ -176,7 +187,6 @@ export default function Form() {
 										value={otp}
 										onChange={handleOtpChange}
 										className="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg block w-2/3 p-2.5"
-										required
 									/>
 									{/* OTP verification status */}
 									<div className="w-2/6">
@@ -194,7 +204,7 @@ export default function Form() {
 												</div>
 											) : (
 												<div className="flex gap-4">
-													<VscError className="text-3xl text-red-500 font-bold" />
+													<VscError className="text-3xl font-bold text-red-500" />
 													<p className="text-lg">Invalid OTP</p>
 												</div>
 											)
@@ -205,13 +215,12 @@ export default function Form() {
 									<label
 										htmlFor="occupation"
 										className="block mb-2 text-sm font-medium text-gray-900 ">
-										Occupation
+										Occupation <span className="text-red-500">*</span>
 									</label>
 									<select
 										name="occupation"
 										id="occupation"
-										className="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg block w-full p-2.5"
-										required>
+										className="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg block w-full p-2.5">
 										<option value="student">Student</option>
 										<option value="unemployed">Looking for a job</option>
 										<option value="employed">Working Professional</option>
@@ -231,7 +240,7 @@ export default function Form() {
 							{/* Confirmation message */}
 							{bookingConfirmed && (
 								<>
-									<div className=" bg-green-100 text-green-700 rounded-lg p-4 text-center text-xl font-bold">
+									<div className="p-4 text-xl font-bold text-center text-green-700 bg-green-100 rounded-lg ">
 										Booked a Session !
 									</div>
 								</>

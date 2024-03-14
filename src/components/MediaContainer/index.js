@@ -9,8 +9,10 @@ export default function MediaContainer() {
 					Recognized & Supported by
 				</h2>
 				<div className="flex flex-row flex-wrap items-center justify-center gap-4">
-					{startUps.map((item) => (
-						<div className="w-40 h-36">
+					{startUps.map((item, i) => (
+						<div
+							className="w-40 h-36"
+							key={i}>
 							<img
 								src={item}
 								alt="startup"

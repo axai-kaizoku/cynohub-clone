@@ -153,31 +153,3 @@ export const cartoonContent = [
 		text: 'Flexible Learing Program',
 	},
 ];
-
-export const chartContent = [
-	{
-		id: '1',
-		title: 'Step #1 Enroll',
-		text: 'Enroll into this course and take your first step towards Full Stack Development.',
-	},
-	{
-		id: '2',
-		title: 'Step #2 Projects',
-		text: 'Practice and master your skillset with over 10+ Industry Level Projects.',
-	},
-	{
-		id: '3',
-		title: 'Step #3 Job Training',
-		text: 'Get Trained with interview etiquette, most commonly asked programming questions and salary negotiations.',
-	},
-	{
-		id: '4',
-		title: 'Step #4 Certificate',
-		text: 'Complete the assignments and get certified as a full stack developer.',
-	},
-	{
-		id: '5',
-		title: 'Step #5 Get Placed',
-		text: 'Get placed in a company as a full stack developer earn an average of 12 Lakhs per annum..',
-	},
-];

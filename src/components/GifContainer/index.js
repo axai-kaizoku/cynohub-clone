@@ -32,32 +32,32 @@ export default function GifContainer() {
 			<div className="flex justify-between max-sm:flex-col-reverse">
 				<ul className="flex flex-col w-full gap-2 mt-6 text-lg font-semibold sm:mt-10 sm:w-2/3">
 					<li
-						className="pb-2 border-b-2 border-b-teal-300 "
+						className="pb-2 border-b-2 cursor-pointer border-b-teal-300"
 						onClick={() => handleClick('html')}>
 						HTML & CSS
 					</li>
 					<li
-						className="pb-2 border-b-2 border-b-teal-300 "
+						className="pb-2 border-b-2 cursor-pointer border-b-teal-300"
 						onClick={() => handleClick('javascript')}>
 						JavaScript
 					</li>
 					<li
-						className="pb-2 border-b-2 border-b-teal-300 "
+						className="pb-2 border-b-2 cursor-pointer border-b-teal-300"
 						onClick={() => handleClick('dsa')}>
 						Data Structures & Algorithms
 					</li>
 					<li
-						className="pb-2 border-b-2 border-b-teal-300 "
+						className="pb-2 border-b-2 cursor-pointer border-b-teal-300"
 						onClick={() => handleClick('react')}>
 						React JS
 					</li>
 					<li
-						className="pb-2 border-b-2 border-b-teal-300 "
+						className="pb-2 border-b-2 cursor-pointer border-b-teal-300"
 						onClick={() => handleClick('mongo')}>
 						Mongo DB, MySQL
 					</li>
 					<li
-						className="pb-2 border-b-2 border-b-teal-300 "
+						className="pb-2 border-b-2 cursor-pointer border-b-teal-300"
 						onClick={() => handleClick('express')}>
 						Express JS, Node JS
 					</li>

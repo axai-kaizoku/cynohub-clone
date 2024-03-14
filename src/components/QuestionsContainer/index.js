@@ -64,7 +64,7 @@ export default function QuestionsContainer() {
 				Frequently Asked Questions
 			</h2>
 			<div className="flex items-center justify-center w-full px-8">
-				<div className="flex flex-col flex-wrap items-center justify-around w-3/4 ">
+				<div className="flex flex-col flex-wrap items-center justify-around w-11/12 sm:w-3/4 ">
 					{accordions.map((accordion) => (
 						<Accordion
 							key={accordion.key}

@@ -25,22 +25,22 @@ export default function GoogleSection() {
 			<div className="flex justify-between max-sm:flex-col-reverse">
 				<ul className="flex flex-col w-full gap-2 mt-6 text-lg font-semibold sm:mt-10 sm:w-2/6">
 					<li
-						className="pb-2 border-b-2 border-b-teal-300 w-fit"
+						className="pb-2 border-b-2 cursor-pointer border-b-teal-300 w-fit"
 						onClick={() => handleClick('html')}>
 						HTML & CSS Developer Salary
 					</li>
 					<li
-						className="pb-2 border-b-2 border-b-teal-300 w-fit"
+						className="pb-2 border-b-2 cursor-pointer border-b-teal-300 w-fit"
 						onClick={() => handleClick('frontend')}>
 						Front End Developer Salary
 					</li>
 					<li
-						className="pb-2 border-b-2 border-b-teal-300 w-fit"
+						className="pb-2 border-b-2 cursor-pointer border-b-teal-300 w-fit"
 						onClick={() => handleClick('backend')}>
 						Backend Developer Salary
 					</li>
 					<li
-						className="pb-2 border-b-2 border-b-teal-300 w-fit"
+						className="pb-2 border-b-2 cursor-pointer border-b-teal-300 w-fit"
 						onClick={() => handleClick('fullstack')}>
 						Full Stack Developer Salary
 					</li>

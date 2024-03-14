@@ -36,22 +36,22 @@ export default function IndustryContainer() {
 
 					<ul className="flex flex-col w-full gap-8 mt-4 text-lg font-semibold sm:mt-20">
 						<li
-							className="pb-2 border-b-2 border-b-teal-300 "
+							className="pb-2 border-b-2 cursor-pointer border-b-teal-300"
 							onClick={() => handleClick('communication')}>
 							Learn Professional Communication
 						</li>
 						<li
-							className="pb-2 border-b-2 border-b-teal-300 "
+							className="pb-2 border-b-2 cursor-pointer border-b-teal-300"
 							onClick={() => handleClick('job')}>
 							Job Training
 						</li>
 						<li
-							className="pb-2 border-b-2 border-b-teal-300 "
+							className="pb-2 border-b-2 cursor-pointer border-b-teal-300"
 							onClick={() => handleClick('interview')}>
 							Interview Preparation
 						</li>
 						<li
-							className="pb-2 border-b-2 border-b-teal-300 "
+							className="pb-2 border-b-2 cursor-pointer border-b-teal-300"
 							onClick={() => handleClick('mock')}>
 							Mock Interviews
 						</li>

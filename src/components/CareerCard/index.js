@@ -6,7 +6,7 @@ export default function CareerCard({
 	message,
 }) {
 	return (
-		<div className="w-full m-4 bg-white sm:w-2/5 h-fit rounded-2xl">
+		<div className="w-full m-4 bg-white sm:w-2/5 min-h-[300px] rounded-2xl ">
 			<div className="flex justify-between p-4">
 				<div className="flex flex-col items-center justify-center">
 					<div className="w-4/5 h-4/5 rounded-[50%] overflow-hidden flex justify-center items-center">

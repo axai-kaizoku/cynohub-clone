@@ -125,3 +125,59 @@ export const companies = [
 	'/cynohub-comp/23.png',
 	'/cynohub-comp/24.png',
 ];
+
+export const cartoonContent = [
+	{
+		id: '1',
+		image: '/cynohub-tech/idea.png',
+		text: '16+ Real Time Projects 100% Job Assistance',
+	},
+	{
+		id: '2',
+		image: '/cynohub-tech/project.png',
+		text: 'Real-world projects from industry experts',
+	},
+	{
+		id: '3',
+		image: '/cynohub-tech/online-counseling.png',
+		text: 'Career Mentoring Sessions',
+	},
+	{
+		id: '4',
+		image: '/cynohub-tech/cv.png',
+		text: 'Resume & Linkedin Profile Building',
+	},
+	{
+		id: '5',
+		image: '/cynohub-tech/flexible.png',
+		text: 'Flexible Learing Program',
+	},
+];
+
+export const chartContent = [
+	{
+		id: '1',
+		title: 'Step #1 Enroll',
+		text: 'Enroll into this course and take your first step towards Full Stack Development.',
+	},
+	{
+		id: '2',
+		title: 'Step #2 Projects',
+		text: 'Practice and master your skillset with over 10+ Industry Level Projects.',
+	},
+	{
+		id: '3',
+		title: 'Step #3 Job Training',
+		text: 'Get Trained with interview etiquette, most commonly asked programming questions and salary negotiations.',
+	},
+	{
+		id: '4',
+		title: 'Step #4 Certificate',
+		text: 'Complete the assignments and get certified as a full stack developer.',
+	},
+	{
+		id: '5',
+		title: 'Step #5 Get Placed',
+		text: 'Get placed in a company as a full stack developer earn an average of 12 Lakhs per annum..',
+	},
+];

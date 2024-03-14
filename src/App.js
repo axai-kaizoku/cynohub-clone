@@ -82,10 +82,10 @@ export default function App() {
 				<div className="w-full pt-12 bg-white">
 					<CareerCardContainer />
 				</div>
-				<div className="w-full pt-12 bg-white">
+				<div className="w-full my-16 bg-sky-200">
 					<CartoonContainer />
 				</div>
-				<div className="w-full pt-12 bg-white">
+				<div className="flex justify-center w-full my-10 align-center">
 					<BookBtn />
 				</div>
 				<div className="w-full pt-12 bg-white">

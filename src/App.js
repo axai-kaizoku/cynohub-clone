@@ -1,6 +1,11 @@
 import Banner from './components/Banner';
 import BookBtn from './components/BookBtn';
+import CareerCardContainer from './components/CareerCardContainer';
 import CareerContainer from './components/CareerContainer';
+import CartoonContainer from './components/CartoonContainer';
+import ChartContainer from './components/ChartContainer';
+import CompaniesContainer from './components/CompaniesContainer';
+import CourseContainer from './components/CourseContainer';
 import Form from './components/Form';
 import GifContainer from './components/GifContainer';
 import GoogleSection from './components/GoogleSection';
@@ -8,6 +13,7 @@ import IndustryContainer from './components/IndustryContainer';
 import Layout from './components/Layout';
 import LearnersBanner from './components/LearnersBanner';
 import MediaContainer from './components/MediaContainer';
+import QuestionsContainer from './components/QuestionsContainer';
 import Carousel from './components/Slider';
 
 export default function App() {
@@ -69,6 +75,27 @@ export default function App() {
 				</div>
 				<div className="w-full pt-12 bg-sky-200">
 					<CareerContainer />
+				</div>
+				<div className="w-full pt-12 bg-white">
+					<CompaniesContainer />
+				</div>
+				<div className="w-full pt-12 bg-white">
+					<CareerCardContainer />
+				</div>
+				<div className="w-full pt-12 bg-white">
+					<CartoonContainer />
+				</div>
+				<div className="w-full pt-12 bg-white">
+					<BookBtn />
+				</div>
+				<div className="w-full pt-12 bg-white">
+					<ChartContainer />
+				</div>
+				<div className="w-full pt-12 bg-white">
+					<CourseContainer />
+				</div>
+				<div className="w-full pt-12 bg-white">
+					<QuestionsContainer />
 				</div>
 			</div>
 		</Layout>
